@@ -28,7 +28,7 @@ whereto=`readlink -m "${whereto}"`
 mkdir -p ${whereto}
 
 in_sem="hypernym hyponym holonym meronym causes caused entails entailed attribute similar verbgroup"
-in_lex="antonym participle pertainym derivation adjderived"
+in_lex="antonym participle pertainym derivation derivation_adj"
 in_both="also"
 in_domain="domain hasdomain"
 in_morph="role_state role_result role_event role_property role_location role_destination role_agent role_undergoer role_uses role_instrument role_bymeansof role_material role_vehicle role_bodypart"

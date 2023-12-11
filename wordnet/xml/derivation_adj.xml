@@ -4,9 +4,9 @@
   ~ Copyright (c) 2023. Bernard Bou
   -->
 
-<relation name="Derived from adjective" id="adjderived" type="lexical" r="true">
+<relation name="Derived from adjective" id="derivation_adj" type="lexical" r="true">
 
-  <img src="adjderived.png"/>
+  <img src="derivation_adj.png"/>
 
   <description>
     <span>Derived from adjective</span>
