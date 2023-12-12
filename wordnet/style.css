@@ -15,6 +15,10 @@ body {
 	display: none;
 }
 
+.main {
+	width: 100%;
+}
+
 /******* hyperlink and anchor tag styles *******/
 
 a:relation,a:visited {
@@ -47,10 +51,12 @@ a:hover {
 
 .relation {
 	visibility: visible;
+	width: 100%;
 	margin-bottom: 100px;
 }
 
 .relationheader {
+    float: right;
 }
 
 .relationimage {
@@ -74,13 +80,34 @@ a:hover {
 	margin-top: 20px;
 }
 
+.colfeatures {
+    width: 50%;
+	margin: 20px;
+}
+
+.colother {
+    width: 50%;
+	margin: 20px;
+}
+
 .features {
-	margin-top: 20px;
+    float: left;
+}
+
+.inverse {
+    float: right;
+}
+
+.see {
+    float: right;
 }
 
 .featureimage {
-	background-color: white;
 	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.otherimage {
 	vertical-align: middle;
 }
 
@@ -205,6 +232,22 @@ a:hover {
 }
 
 .selectorname {
-		margin-left:10px;
+	margin-left:10px;
 }
 
+.toright {
+	float: right;
+}
+
+.toright {
+	float: right;
+}
+
+.full-width {
+	width: 100%;
+}
+/*
+table td:last-child {
+    width: 100%;
+}
+*/

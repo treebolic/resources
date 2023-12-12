@@ -9,27 +9,22 @@
   <img src="hasdomain.png"/>
 
   <description>
-    <!-- formatter:off -->
-    <span>Has domain. Domain member. In domain. Is member of this domain.
+    <span>Has domain. Domain member. In domain. Is member of this domain.</span>
+    <!-- @formatter:off -->
       <ul>
         <li>A concept which is a term of a given Topic, Region or Usage concept.</li>
         <li>A concept which is a term in the scientific category of a given concept.</li>
         <li>A concept which is the term in the geographical / cultural domain of a given concept.</li>
         <li>A concept which is the example of a given concept.</li>
       </ul>
-    </span>
-    <!-- formatter:on -->
-    <!-- formatter:off -->
-    <span>
       <ul>
-      <li><B>In Domain</B> is an underspecified relation between two concepts where Concept A is a Topic (scientific category), Region or Usage term of Concept B.</li>
-      <li><B>Has Domain Topic</B> is a relation between two concepts where Concept A is a <i>scientific category</i> (e.g. computing, sport, biology, etc.) of concept B.</li>
-      <li><B>Has Domain Region</B> is a relation between two concepts where Concept A is a <i>term of the geographical / cultural</i> domain of concept B.</li>
-      <li><B>Exemplifies</B> is a relation between two concepts where Concept A is the example of Concept B. The name was changed from "Member of this domain - USAGE".</li>
-    </ul>
-    </span>
-    <!-- formatter:on -->
-  </description>>
+        <li><B>In Domain</B> is an underspecified relation between two concepts where Concept A is a Topic (scientific category), Region or Usage term of Concept B.</li>
+        <li><B>Has Domain Topic</B> is a relation between two concepts where Concept A is a <i>scientific category</i> (e.g. computing, sport, biology, etc.) of concept B.</li>
+        <li><B>Has Domain Region</B> is a relation between two concepts where Concept A is a <i>term of the geographical / cultural</i> domain of concept B.</li>
+        <li><B>Exemplifies</B> is a relation between two concepts where Concept A is the example of Concept B. The name was changed from "Member of this domain - USAGE".</li>
+      </ul>
+     <!-- @formatter:on -->
+  </description>
 
   <phrases>
     <phrase scope="topic">
@@ -75,7 +70,7 @@
       <from>bake</from>
       <to>cooking</to>
       <gloss>domain topic</gloss>
-     </example>
+    </example>
     <example scope="topic">
       <from>souse</from>
       <to>cooking</to>
@@ -90,7 +85,7 @@
       <from>psalm</from>
       <to>music</to>
       <gloss>domain topic</gloss>
-     </example>
+    </example>
     <example scope="topic">
       <from>hymn</from>
       <to>music</to>
@@ -125,15 +120,13 @@
     <example scope="usage">
       <from>high jinx</from>
       <to>plural</to>
-     </example>
+    </example>
     <example scope="usage">
       <from>like clockwork</from>
       <to>idiom</to>
     </example>
 
   </examples>
-
-  <see tag="domain"/>
 
 </relation>
 

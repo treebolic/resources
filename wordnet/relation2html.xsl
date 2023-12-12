@@ -15,7 +15,7 @@
         <LINK rel="stylesheet" type="text/css" href="style.css"/>
       </HEAD>
       <BODY>
-        <TABLE class="relations">
+        <TABLE class="relations full-width">
           <xsl:apply-templates select=".//relation"/>
         </TABLE>
         <BR/>
@@ -28,8 +28,8 @@
       <xsl:attribute name="id">
         <xsl:value-of select="./@id"/>
       </xsl:attribute>
-      <TD>
-        <TABLE>
+      <TD style="width: 100%;">
+        <TABLE style="width: 100%;">
 
           <TR>
             <TD class="relationimage">
@@ -63,7 +63,7 @@
           </TR>
 
           <TR>
-            <TD colspan="2">
+            <TD class="colfeatures">
               <DIV class="features">
 
                 <!-- semantic/lexical -->
@@ -136,25 +136,6 @@
                     </xsl:attribute>
                     <xsl:attribute name="title">
                       <xsl:text>symmetric</xsl:text>
-                    </xsl:attribute>
-                  </IMG>
-                </xsl:if>
-
-                <!-- inverse -->
-                <xsl:if test="./@inverse">
-                  <xsl:variable name="inverse">
-                    <xsl:value-of select="./@inverse"/>
-                  </xsl:variable>
-                  <xsl:text>inverse </xsl:text>
-                  <IMG class="featureimage">
-                    <xsl:attribute name="src">
-                      <xsl:copy-of select="$imagedir"/>
-                      <xsl:call-template name="get-image">
-                        <xsl:with-param name="tag">
-                          <xsl:value-of select="$inverse"/>
-                        </xsl:with-param>
-                        <xsl:with-param name="scope"/>
-                      </xsl:call-template>
                     </xsl:attribute>
                   </IMG>
                 </xsl:if>
@@ -233,14 +214,52 @@
 
               </DIV>
             </TD>
+            <TD class="colother">
+              <TABLE class="toright">
+                <TR>
+                  <TD>
+                    <DIV class="inverse">
+                      <xsl:if test="./@inverse">
+                        <xsl:variable name="inverse">
+                          <xsl:value-of select="./@inverse"/>
+                        </xsl:variable>
+                        <xsl:text>inverse: </xsl:text>
+                        <A>
+                          <xsl:attribute name="href">
+                            <xsl:value-of select="$inverse"/>
+                            <xsl:text>.html</xsl:text>
+                          </xsl:attribute>
+                          <xsl:value-of select="$inverse"/>
+                        </A>
+                        <xsl:text> </xsl:text>
+                        <IMG class="otherimage">
+                          <xsl:attribute name="src">
+                            <xsl:copy-of select="$imagedir"/>
+                            <xsl:call-template name="get-image">
+                              <xsl:with-param name="tag">
+                                <xsl:value-of select="$inverse"/>
+                              </xsl:with-param>
+                              <xsl:with-param name="scope"/>
+                            </xsl:call-template>
+                          </xsl:attribute>
+                        </IMG>
+                      </xsl:if>
+                    </DIV>
+                  </TD>
+                </TR>
+                <TR>
+                  <TD>
+                    <DIV class="see">
+                      <xsl:apply-templates select="./see"/>
+                    </DIV>
+                  </TD>
+                </TR>
+              </TABLE>
+            </TD>
           </TR>
 
           <TR>
-            <TD colspan="2">
-              <DIV class="see">
-                <xsl:apply-templates select="./see"/>
-              </DIV>
-            </TD>
+            <TD colspan="2"/>
           </TR>
 
           <TR>
@@ -298,17 +317,18 @@
 
   <xsl:template match="see">
     <DIV class="see">
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="./text()"/>
+      <xsl:text> </xsl:text>
       <xsl:variable name="tag">
         <xsl:value-of select="./@tag"/>
       </xsl:variable>
-      <xsl:text>See </xsl:text>
+      <xsl:text>see: </xsl:text>
       <xsl:call-template name="make-image-with-link">
         <xsl:with-param name="tag">
           <xsl:value-of select="$tag"/>
         </xsl:with-param>
       </xsl:call-template>
-      <xsl:text> </xsl:text>
-      <xsl:value-of select="./text()"/>
     </DIV>
   </xsl:template>
 
@@ -462,19 +482,19 @@
 
   <xsl:template name="make-image-with-link">
     <xsl:param name="tag"/>
+    <A>
+      <xsl:attribute name="href">
+        <xsl:value-of select="$tag"/>
+        <xsl:text>.html</xsl:text>
+      </xsl:attribute>
+      <xsl:value-of select="$tag"/>
+    </A>
+    <xsl:text> </xsl:text>
     <xsl:call-template name="make-image">
       <xsl:with-param name="tag">
         <xsl:value-of select="$tag"/>
       </xsl:with-param>
     </xsl:call-template>
-    <xsl:text> </xsl:text>
-    <A>
-      <xsl:attribute name="href">
-        <xsl:value-of select="$tag"/>
-        <xsl:text>.html/</xsl:text>
-      </xsl:attribute>
-      <xsl:value-of select="$tag"/>
-    </A>
   </xsl:template>
 
   <xsl:template match="@*">

@@ -13,8 +13,8 @@
   </description>
 
   <logical>
-    <def><!--@formatter:off--><span>A verb <b>C</b> causes <b>R</b></span><!--@formatter:on--></def>
-    <cond><!--@formatter:off--><span><b>C</b> denotes the causation of the state or activity referred to by <b>R</b></span></cond><!--@formatter:on-->
+    <def><!-- @formatter:off --><span>A verb <b>C</b> causes <b>R</b></span><!-- @formatter:on --></def>
+    <cond><!-- @formatter:off --><span><b>C</b> denotes the causation of the state or activity referred to by <b>R</b></span></cond><!-- @formatter:on -->
   </logical>
 
   <phrases>

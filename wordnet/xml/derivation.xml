@@ -13,7 +13,9 @@
   </description>
 
   <phrases>
-    <phrase><span>is derivationally-related to</span></phrase>
+    <phrase>
+      <span>is derivationally-related to</span>
+    </phrase>
   </phrases>
 
   <guides>

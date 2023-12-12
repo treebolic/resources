@@ -13,7 +13,9 @@
   </description>
 
   <phrases>
-    <phrase><span>is an attribute of</span></phrase>
+    <phrase>
+      <span>is an attribute of</span>
+    </phrase>
   </phrases>
 
   <guides>
@@ -39,7 +41,7 @@
       <from>emotionality</from>
       <to>cold</to>
     </example>
-     <example>
+    <example>
       <from>emotionality</from>
       <to>warm</to>
     </example>

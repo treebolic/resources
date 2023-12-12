@@ -13,9 +13,9 @@
   </description>
 
   <logical>
-    <def><!--@formatter:off--><span>A verb <b>E</b> is entailed by<b>A</b></span><!--@formatter:on--></def>
-    <cond><!--@formatter:off--><span><b>A</b> cannot be done unless <b>E</b> is, or has been, done</span><!--@formatter:on--></cond>
-    <cond><!--@formatter:off--><span>there is no conceivable state of affairs that could make <b>A</b> true and <b>E</b> false</span><!--@formatter:on--></cond>
+    <def><!-- @formatter:off --><span>A verb <b>E</b> is entailed by<b>A</b></span><!-- @formatter:on --></def>
+    <cond><!-- @formatter:off --><span><b>A</b> cannot be done unless <b>E</b> is, or has been, done</span><!-- @formatter:on --></cond>
+    <cond><!-- @formatter:off --><span>there is no conceivable state of affairs that could make <b>A</b> true and <b>E</b> false</span><!-- @formatter:on --></cond>
   </logical>
 
   <phrases>

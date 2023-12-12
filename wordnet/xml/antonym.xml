@@ -9,23 +9,25 @@
   <img src="antonym.png"/>
 
   <description>
-    <!--@formatter:off-->
+    <!-- @formatter:off -->
     <span>A pair of words between which there is an opposition relation.
     An opposite and inherently incompatible word.
     Antonymy is a <strong>lexical relation</strong>, not a semantic one.
     <em>Heavy</em> and <em>light</em> are antonyms while <em>ponderous</em> and <em>light</em>,
     <em>heavy</em> and <em>weightless</em> are not (they're indirect antonyms).
     Two words are antonyms if their meanings are opposite in some way such as:
+    </span><!-- @formatter:on -->
     <ul>
       <li>The two words show binary opposition: superior vs inferior (simple)</li>
       <li>The two words are near the opposite ends of a spectrum: hot vs cold (gradable)</li>
       <li>The two words express change or movement in opposite directions: buy vs sell (converse)</li>
     </ul>
-    </span><!--@formatter:on-->
   </description>
 
   <phrases>
-    <phrase><span>is the opposite of</span></phrase>
+    <phrase>
+      <span>is the opposite of</span>
+    </phrase>
   </phrases>
 
   <guides>

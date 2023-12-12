@@ -9,24 +9,21 @@
   <img src="domain.png"/>
 
   <description>
-    <!-- formatter:off -->
-    <span>Domain of synset.
+    <span>Domain of synset.</span>
+    <!-- @formatter:off -->
     <ul>
       <li>A concept which is a Topic, Region or Usage pointer of a given concept.</li>
       <li>A concept which is the scientific category pointer of a given concept.</li>
       <li>A concept which is a geographical / cultural domain pointer of a given concept.</li>
       <li>A concept which is the type of a given concept.</li>
     </ul>
-    <!-- formatter:on -->
-    <!-- formatter:off -->
     <ul>
       <li><b>Domain</b> is an underspecified relation between two concepts where Concept B is a Topic (scientific category), Region or Usage pointer of Concept A.</li>
       <li><b>Domain Topic</b> is a relation between two concepts where Concept B is a <i>scientific category</i> (e.g. computing, sport, biology, etc.) of concept A.</li>
       <li><b>Domain Region</b> is a relation between two concepts where Concept B is a <i>geographical / cultural</i> domain of concept A.</li>
       <li><b>Is Exemplified By</b> is a relation between two concepts where Concept B is a type of Concept A, such as idiom, honorific or classifier. The name was changed from "Domain - USAGE".</li>
     </ul>
-    </span>
-    <!-- formatter:on -->
+    <!-- @formatter:on -->
   </description>
 
   <phrases>
@@ -86,12 +83,12 @@
       <to>centre</to>
       <from>Britain</from>
       <gloss>domain region</gloss>
-     </example>
+    </example>
     <example scope="region">
       <from>Australia</from>
       <to>walkabout</to>
       <gloss>domain region</gloss>
-     </example>
+    </example>
     <example scope="region">
       <from>South Africa</from>
       <to>trek</to>
@@ -121,8 +118,6 @@
     </example>
 
   </examples>
-
-  <see tag="hasdomain"/>
 
 </relation>
 

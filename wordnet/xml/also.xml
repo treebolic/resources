@@ -13,7 +13,9 @@
   </description>
 
   <phrases>
-    <phrase><span>relates to</span></phrase>
+    <phrase>
+      <span>relates to</span>
+    </phrase>
   </phrases>
 
   <guides>

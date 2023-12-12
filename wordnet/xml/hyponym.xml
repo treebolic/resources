@@ -16,13 +16,13 @@
   </description>
 
   <logical>
-    <def><!--@formatter:off--><span><b>H</b> is a hyponym of <b>X</b></span><!--@formatter:on--></def>
-    <cond><!--@formatter:off--><span><b>H</b> is a (kind of) <b>X</b></span><!--@formatter:on--></cond>
+    <def><!-- @formatter:off --><span><b>H</b> is a hyponym of <b>X</b></span><!-- @formatter:on --></def>
+    <cond><!-- @formatter:off --><span><b>H</b> is a (kind of) <b>X</b></span><!-- @formatter:on --></cond>
   </logical>
 
   <logical>
-    <def><!--@formatter:off--><span><b>H</b> is a troponym of <b>X</b></span><!--@formatter:on--></def>
-    <cond><!--@formatter:off--><span>to <b>H</b> is to <b>X</b> in some manner </span><!--@formatter:on--></cond>
+    <def><!-- @formatter:off --><span><b>H</b> is a troponym of <b>X</b></span><!-- @formatter:on --></def>
+    <cond><!-- @formatter:off --><span>to <b>H</b> is to <b>X</b> in some manner </span><!-- @formatter:on --></cond>
   </logical>
 
   <phrases>
@@ -128,8 +128,6 @@
     </example>
 
   </examples>
-
-  <see tag="hypernym">(the inverse relation)</see>
 
 </relation>
 

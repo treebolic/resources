@@ -13,10 +13,10 @@
   </description>
 
   <logical>
-    <def><!--@formatter:off--><span><b>W/O/C</b> is a holonym of <b>P/S/M</b></span><!--@formatter:on--></def>
-    <cond><!--@formatter:off--><span><b>P</b> is a part of <b>W</b></span><!--@formatter:on--></cond>
-    <cond><!--@formatter:off--><span><b>S</b> is a substance of <b>O</b> </span><!--@formatter:on--></cond>
-    <cond><!--@formatter:off--><span><b>M</b> is a member of <b>C</b> </span><!--@formatter:on--></cond>
+    <def><!-- @formatter:off --><span><b>W/O/C</b> is a holonym of <b>P/S/M</b></span><!-- @formatter:on --></def>
+    <cond><!-- @formatter:off --><span><b>P</b> is a part of <b>W</b></span><!-- @formatter:on --></cond>
+    <cond><!-- @formatter:off --><span><b>S</b> is a substance of <b>O</b> </span><!-- @formatter:on --></cond>
+    <cond><!-- @formatter:off --><span><b>M</b> is a member of <b>C</b> </span><!-- @formatter:on --></cond>
   </logical>
 
   <phrases>
@@ -106,7 +106,5 @@
       <gloss>feature-activity</gloss>
     </example>
   </examples>
-
-  <see tag="meronym">(the inverse relation)</see>
 
 </relation>
