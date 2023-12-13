@@ -41,7 +41,7 @@ function menu()
 			</HEAD>
 			<BODY>
 				<DIV class="header">
-					<IMG class="menu" src="./images/menu.png" alt="menu" oncLick="javascript:menu()" />
+					<IMG class="menu" src="images/menu.png" alt="menu" oncLick="javascript:menu()" />
 					<SPAN class="title">Relations</SPAN>
 				</DIV>
 				<TABLE>

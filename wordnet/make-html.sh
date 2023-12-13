@@ -87,3 +87,8 @@ sed "s/e.style.visibility='visible'/e.style.display='block'/g" > ${whereto}/inde
 
 #cp index*.html ${whereto}
 cp style.css ${whereto}
+cp main.html ${whereto}
+cp index-css.html ${whereto}
+cp index-frames.html ${whereto}
+cp index-iframes.html ${whereto}
+cp splash.png ${whereto}/images/
