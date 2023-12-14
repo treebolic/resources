@@ -1,32 +1,41 @@
 #!/bin/bash
 
-# args
-if [ "-31" == "$1" ]; then
-	wn31="31"
-	shift
-fi
-whereto="$1"
-shift
+srcdir="html"
 
-thisdir=$(dirname $(readlink -m $0))
-htmldir="html"
-
-whereto=../../swing-wordnet/src/main/resources/treebolic/wordnet/browser
-whereto=$(readlink -m "${whereto}")
-
+source define_colors.sh
 
 function copy() {
     local from="$1"
     local to="$2"
-    echo "-> ${to}"
+    to=$(readlink -m "${to}")
+    echo -e "-> ${M}${to}${Z}"
     mkdir -p "${to}"
     cp -pR "${from}/" -T "${to}"
     # "${from}" and "${to}" have identical contents, but not necessarily identical basenames
 }
 
-copy "${htmldir}" "${whereto}/doc" 
-copy "${htmldir}" "/opt/devel/android-treebolic-as/TreebolicWordNet/treebolicWordNetLib/src/main/assets/reference"
-#copy "${htmldir}" "/opt/devel/android-treebolic-as/TreebolicWordNet/treebolicWordNet/src/main/assets/reference"
-#copy "${htmldir}" "/opt/devel/android-treebolic-as/TreebolicWordNet/treebolicWordNetForGoogle/src/main/assets/reference"
-#copy "${htmldir}" "/opt/devel/android-treebolic-as/TreebolicWordNet/treebolicWordNetForAmazon/src/main/assets/reference"
+# treebolic swing
+echo -e "${Y}treebolic swing${Z}"
+whereto="../../swing-wordnet/src/main/resources/treebolic/wordnet/browser/doc"
+copy "${srcdir}" "${whereto}"
+rm "${whereto}/index-css.html" # won't work
+rm "${whereto}/index-iframes.html" # won't work
+rm "${whereto}/index_android.html" # won't work
+rm "${whereto}/selector.html" # not used
+rm "${whereto}/relations_display.js" # not used
+rm "${whereto}/relations_display_block.js" # not used
+# index.html with relations.js
+mv "${whereto}/relations_visibility.js" "${whereto}/relations.js"
+# index_web.html with relations_visibility.js
 
+# treebolic android
+echo -e "${Y}treebolic android${Z}"
+whereto="/opt/devel/android-treebolic-as/TreebolicWordNet/treebolicWordNetLib/src/main/assets/reference"
+copy "${srcdir}" "${whereto}"
+rm "${whereto}/index-css.html"
+rm "${whereto}/index-iframes.html"
+rm "${whereto}/index-frames.html"
+mv "${whereto}/index.html" "${whereto}/index_web.html"
+mv "${whereto}/index_android.html" "${whereto}/index.html"
+rm "${whereto}/relations_visibility.js"
+mv "${whereto}/relations_display_block.js" "${whereto}/relations.js"

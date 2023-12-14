@@ -14,25 +14,8 @@
         <TITLE>
           <xsl:value-of select="'Relations'"/>
         </TITLE>
-        <LINK rel="stylesheet" type="text/css" href="style.css"/>
-        <SCRIPT type="text/javascript">
-					<xsl:text disable-output-escaping="yes"><![CDATA[
-function select(tag)
-{
-		var iframe=parent.document.getElementById('main');
-		var maindoc=iframe.contentWindow.document;
-		var all=maindoc.getElementsByName('relation');
-		for(i=0;i<all.length;i++)
-		{
-			var e=all[i];
-			e.style.visibility="collapse";
-		}
-		var e=maindoc.getElementById(tag);
-		e.style.visibility="visible";
-}
-]]>
-					</xsl:text>
-        </SCRIPT>
+        <LINK rel="stylesheet" type="text/css" href="relations.css"/>
+        <SCRIPT src="relations.js"/>
       </HEAD>
       <BODY>
         <TABLE>
@@ -45,7 +28,7 @@ function select(tag)
   <xsl:template match="relation">
     <TR class='selector'>
       <!-- @formatter:off --><xsl:attribute name="onclick">javascript:select('<xsl:value-of select="./@id"/>');</xsl:attribute><!-- @formatter:on -->
-      <TD style='vertical-align: top;'>
+      <TD class='totop;'>
         <IMG class="relationimage">
           <xsl:attribute name="src">
             <xsl:copy-of select="$imagedir"/>

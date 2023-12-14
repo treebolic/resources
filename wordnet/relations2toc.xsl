@@ -14,7 +14,7 @@
         <TITLE>
           <xsl:value-of select="'Relations'"/>
         </TITLE>
-        <LINK rel="stylesheet" type="text/css" href="style.css"/>
+        <LINK rel="stylesheet" type="text/css" href="relations.css"/>
         <BASE target="main"/>
       </HEAD>
       <BODY>
@@ -27,7 +27,7 @@
 
   <xsl:template match="relation">
     <TR class='selector'>
-      <TD style='vertical-align: top;'>
+      <TD class='totop'>
         <IMG class="relationimage">
           <xsl:attribute name="src">
             <xsl:copy-of select="$imagedir"/>

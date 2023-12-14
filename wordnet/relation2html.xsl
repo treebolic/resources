@@ -12,7 +12,7 @@
         <TITLE>
           <xsl:value-of select="'Relations'"/>
         </TITLE>
-        <LINK rel="stylesheet" type="text/css" href="style.css"/>
+        <LINK rel="stylesheet" type="text/css" href="relations.css"/>
       </HEAD>
       <BODY>
         <TABLE class="relations full-width">
@@ -24,14 +24,14 @@
   </xsl:template>
 
   <xsl:template match="relation">
-    <TR class="relation" name="relation">
+    <TR class="relation full-width" name="relation">
       <xsl:attribute name="id">
         <xsl:value-of select="./@id"/>
       </xsl:attribute>
-      <TD style="width: 100%;">
-        <TABLE style="width: 100%;">
-
-          <TR>
+      <TD class="full-width">
+        <TABLE class="full-width">
+          <!-- HEADER -->
+          <TR class="full-width">
             <TD class="relationimage">
               <IMG>
                 <xsl:attribute name="src">
@@ -49,19 +49,19 @@
               </SPAN>
             </TD>
           </TR>
-
-          <TR>
+          <!-- DESCRIPTION -->
+          <TR class="full-width">
             <TD colspan="2">
               <xsl:apply-templates select="./description"/>
             </TD>
           </TR>
-
+          <!-- LOGICAL -->
           <TR>
             <TD colspan="2">
               <xsl:apply-templates select="./logical"/>
             </TD>
           </TR>
-
+          <!-- FEATURES -->
           <TR>
             <TD class="colfeatures">
               <DIV class="features">
@@ -257,11 +257,11 @@
               </TABLE>
             </TD>
           </TR>
-
+          <!-- SPACE -->
           <TR>
             <TD colspan="2"/>
           </TR>
-
+          <!-- EXAMPLES -->
           <TR>
             <TD colspan="2">
               <DIV class="examples">
@@ -272,7 +272,7 @@
               </DIV>
             </TD>
           </TR>
-
+          <!-- PHRASES -->
           <TR>
             <TD colspan="2">
               <DIV class="phrases">
@@ -282,7 +282,6 @@
               </DIV>
             </TD>
           </TR>
-
         </TABLE>
       </TD>
     </TR>
@@ -382,14 +381,12 @@
 
   <xsl:template match="guide">
     <TR>
-      <TD class="fromguide">
-        <xsl:value-of select="./from/text()"/>
-      </TD>
+      <!-- @formatter:off -->
+      <TD class="fromguide"><xsl:value-of select="./from/text()"/></TD>
       <TD/>
-      <TD class="toguide">
-        <xsl:value-of select="./to/text()"/>
-      </TD>
+      <TD class="toguide"><xsl:value-of select="./to/text()"/></TD>
       <xsl:apply-templates select="./gloss"/>
+      <!-- @formatter:on -->
     </TR>
   </xsl:template>
 
@@ -399,7 +396,7 @@
 
   <xsl:template match="phrase">
     <xsl:variable name="relationphrase">
-      <xsl:copy-of select="."/>
+      <xsl:copy-of select="./*"/>
     </xsl:variable>
     <xsl:variable name="scope">
       <xsl:value-of select="./@scope"/>
@@ -408,15 +405,11 @@
       <xsl:when test="$scope != ''">
         <xsl:for-each select="../../examples/example[@scope=$scope]">
           <TR>
-            <TD class='fromphrase'>
-              <xsl:value-of select="./from"/>
-            </TD>
-            <TD class='relphrase'>
-              <xsl:value-of select="$relationphrase"/>
-            </TD>
-            <TD class='tophrase'>
-              <xsl:value-of select="./to"/>
-            </TD>
+            <!-- @formatter:off -->
+            <TD class='fromphrase'><xsl:value-of select="./from"/></TD>
+            <TD class='relphrase'><xsl:copy-of select="$relationphrase"/></TD>
+            <TD class='tophrase'><xsl:value-of select="./to"/></TD>
+            <!-- @formatter:on -->
           </TR>
         </xsl:for-each>
       </xsl:when>

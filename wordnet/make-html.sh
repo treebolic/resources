@@ -78,15 +78,17 @@ if ! ./xsl-transform.sh ${wherefrom}/all.xml ${whereto}/toc.html ${xsl_toc} html
 	echo -e "${R}XST ${xml}${Z}"
 fi
 
-# (android) index.html
-cat ${whereto}/index.html |
-sed "s/e.style.visibility='collapse'/e.style.display='none'/g" |
-sed "s/e.style.visibility='visible'/e.style.display='block'/g" > ${whereto}/index_android.html
+# specific
+sed "s/relations.js/relations_visibility.js/g" ${whereto}/index.html > ${whereto}/index_web.html
+sed "s/relations.js/relations_display.js/g" ${whereto}/index.html > ${whereto}/index_javafx.html
+sed "s/relations.js/relations_display_block.js/g" ${whereto}/index.html > ${whereto}/index_android.html
 # rm ${whereto}/index.html
-# mv ${whereto}/index_android.html ${whereto}/index.html
 
 #cp index*.html ${whereto}
-cp style.css ${whereto}
+cp relations.css ${whereto}
+cp relations_visibility.js ${whereto}
+cp relations_display.js ${whereto}
+cp relations_display_block.js ${whereto}
 cp main.html ${whereto}
 cp index-css.html ${whereto}
 cp index-frames.html ${whereto}
