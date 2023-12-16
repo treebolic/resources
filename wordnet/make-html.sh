@@ -21,9 +21,9 @@ if [ -z "${whereto}" ]; then
 fi
 
 # input
-in="${all_relations_wn31}"
-if [ -z "${wn31}" ]; then
-	in="${in} ${role}"
+in="${all_relations}"
+if [ ! -z "${wn31}" ]; then
+	in="${all_relations_wn31}"
 fi
 
 # xslt
@@ -36,6 +36,9 @@ xsl_toc="relations2toc.xsl"
 wherefrom=`readlink -m "${wherefrom}"`
 whereto=`readlink -m "${whereto}"`
 mkdir -p "${whereto}"
+rm "${whereto}"/*.html
+rm "${whereto}"/*.css
+rm "${whereto}"/*.js
 
 # merge all *.xml files into all.xml
 echo '<?xml version="1.0" encoding="UTF-8"?>' > ${wherefrom}/all.xml 
@@ -78,19 +81,19 @@ if ! ./xsl-transform.sh ${wherefrom}/all.xml ${whereto}/toc.html ${xsl_toc} html
 	echo -e "${R}XST ${xml}${Z}"
 fi
 
-# specific
-sed "s/relations.js/relations_visibility.js/g" ${whereto}/index.html > ${whereto}/index_web.html
-sed "s/relations.js/relations_display.js/g" ${whereto}/index.html > ${whereto}/index_javafx.html
-sed "s/relations.js/relations_display_block.js/g" ${whereto}/index.html > ${whereto}/index_android.html
-# rm ${whereto}/index.html
+# specific workaround
+sed "s/relations.js/relations_visibility.js/g" ${whereto}/index.html > ${whereto}/index_visibility.html
 
-#cp index*.html ${whereto}
+# support css
 cp relations.css ${whereto}
+
+# support css
+cp relations.js ${whereto}
 cp relations_visibility.js ${whereto}
-cp relations_display.js ${whereto}
-cp relations_display_block.js ${whereto}
+
+# support frames
 cp main.html ${whereto}
-cp index-css.html ${whereto}
 cp index-frames.html ${whereto}
 cp index-iframes.html ${whereto}
-cp splash.png ${whereto}/images/
+cp index-iframes-css.html ${whereto}
+

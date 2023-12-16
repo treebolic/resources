@@ -15,13 +15,8 @@ Z='\u001b[0m'
 echo -e "${Y}OEWN${Z}"
 ./make-html.sh
 ./make-artwork.sh
-pushd ../../../../wordNet/artwork-relations > /dev/null
-./make-artwork-reference.sh
-popd > /dev/null
 
 echo -e "${Y}WN31${Z}"
 ./make-html.sh -31
 ./make-artwork.sh -31
-pushd ../../../../wordNet/artwork-relations > /dev/null
-./make-artwork-reference.sh -31
-popd > /dev/null
+

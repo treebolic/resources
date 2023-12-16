@@ -9,7 +9,7 @@ function select(tag)
 			e.style.display='none';
 		}
 		var e=maindoc.getElementById(tag);
-		e.style.display='block';
+		e.style.display='table-row';
 }
 function menu()
 {
@@ -20,4 +20,3 @@ function menu()
 		else
 			toc.style.display='none';
 }
-

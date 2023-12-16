@@ -32,21 +32,19 @@
         <TABLE class="full-width">
           <!-- HEADER -->
           <TR class="full-width">
-            <TD class="relationimage">
-              <IMG>
-                <xsl:attribute name="src">
-                  <xsl:copy-of select="$imagedir"/>
-                  <xsl:value-of select="./img/@src"/>
-                </xsl:attribute>
-                <xsl:attribute name="alt">
-                  <xsl:value-of select="./@name"/>
-                </xsl:attribute>
-              </IMG>
-            </TD>
-            <TD class="relationheader">
-              <SPAN class="name">
-                <xsl:value-of select="./@name"/>
-              </SPAN>
+            <TD colspan="2">
+              <DIV class="relationheader">
+                <IMG class="relationimage">
+                  <xsl:attribute name="src">
+                    <xsl:copy-of select="$imagedir"/>
+                    <xsl:value-of select="./img/@src"/>
+                  </xsl:attribute>
+                  <xsl:attribute name="alt">
+                    <xsl:value-of select="./@name"/>
+                  </xsl:attribute>
+                </IMG>
+                <SPAN class="relationname"><xsl:value-of select="./@name"/></SPAN>
+              </DIV>
             </TD>
           </TR>
           <!-- DESCRIPTION -->

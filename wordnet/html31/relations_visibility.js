@@ -6,10 +6,10 @@ function select(tag)
 		for(i=0;i<all.length;i++)
 		{
 			var e=all[i];
-			e.style.display='none';
+			e.style.visibility='collapse';
 		}
 		var e=maindoc.getElementById(tag);
-		e.style.display='block';
+		e.style.visibility='visible';
 }
 function menu()
 {
@@ -20,4 +20,3 @@ function menu()
 		else
 			toc.style.display='none';
 }
-

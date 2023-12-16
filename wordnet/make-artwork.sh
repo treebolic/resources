@@ -1,15 +1,20 @@
 #!/bin/bash
 
+source define_colors.sh
+source define_wordnet.sh
+source define_wordnet_relations.sh
+
 # args
 if [ "-31" == "$1" ]; then
 	wn31="31"
+    selected_relations="${all_relations_wn31}"
 	shift
+else
+    selected_relations="${all_relations}"
 fi
 whereto="$1"
 shift
 
-thisdir="`dirname $(readlink -m $0)`"
-thisdir="$(readlink -m ${thisdir})"
 artworkdir="artwork"
 htmldir="html"
 imagesdir="images"
@@ -21,13 +26,8 @@ fi
 wherefrom=`readlink -m "${wherefrom}"`
 whereto=`readlink -m "${whereto}"`
 
-source define_colors.sh
-source define_wordnet.sh
-source define_wordnet_relations.sh
-
-all="${all_wordnet} ${all_relations}"
-
 mkdir -p ${whereto}
+rm "${whereto}"/*.png
 
 utils="menu"
 
@@ -49,5 +49,7 @@ function svgs2pngs(){
 }
 
 svgs2pngs 30 "${wherefrom}"           "${whereto}" ${all_wordnet}
-svgs2pngs 30 "${wherefrom}/relations" "${whereto}" ${all_relations}
+svgs2pngs 30 "${wherefrom}/relations" "${whereto}" ${selected_relations}
 svgs2pngs 24 "${wherefrom}"           "${whereto}" ${utils}
+cp           splash.png               "${whereto}"
+
